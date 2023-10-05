@@ -46,9 +46,13 @@ class Rectangle:
             perimeter = (self.__height * 2) + (self.__width * 2)
         return perimeter
 
-    def my_print(self):
+    def __str__(self):
+        print_rectangle = ""
         if self.__width == 0 or self.__height == 0:
-            return str()
+            return ""
         else:
-            for element in range(self.area):
-                print("#" * self.area)
+            for h_element in range(self.__height):
+                for w_element in range(self.__width):
+                    print_rectangle += "#"
+                print_rectangle += "\n"
+            return print_rectangle[:-1]
