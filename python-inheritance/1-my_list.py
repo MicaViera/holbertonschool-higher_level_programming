@@ -6,5 +6,4 @@ class MyList:
     """My List Class."""
 
     def print_sorted(self):
-        """Function that prints a list."""
         print(sorted(self))
