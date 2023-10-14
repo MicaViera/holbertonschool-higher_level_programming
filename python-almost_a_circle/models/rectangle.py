@@ -72,7 +72,11 @@ class Rectangle(Base):
     
     def display(self):
         """Function that displays the rectangle in stdout."""
+        for y_element in range(self.__y):
+            print()
         for h_element in range(self.__height):
+            for x_element in range(self.__x):
+                print(" ", end="")
             for w_element in range(self.__width):
                 print("#", end="")
             print()
