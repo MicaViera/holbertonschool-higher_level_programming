@@ -111,3 +111,14 @@ class Rectangle(Base):
                     self.__x = value
                 if kw == "y":
                     self.__y = value
+
+    def to_dictionary(self):
+        """Method that cretaes a dictionary."""
+        RectangleDictionary = {
+            "id": self.id,
+            "width": self.width,
+            "height": self.height,
+            "x": self.x,
+            "y": self.y
+        }
+        return RectangleDictionary
