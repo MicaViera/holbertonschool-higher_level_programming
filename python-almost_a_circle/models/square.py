@@ -44,3 +44,13 @@ class Square(Rectangle):
                     self.x = value
                 if kw == "y":
                     self.y = value
+
+    def to_dictionary(self):
+        """Method that cretaes a dictionary."""
+        Square = {
+            "id": self.id,
+            "size": self.size,
+            "x": self.x,
+            "y": self.y
+        }
+        return Square
