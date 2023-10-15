@@ -22,4 +22,3 @@ class Square(Rectangle):
     def __str__(self):
         """Function that returns a string."""
         return f"[Square] ({self.id}) {self.x}/{self.y} - {self.width}"
-
