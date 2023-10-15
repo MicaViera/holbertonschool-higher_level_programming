@@ -49,8 +49,9 @@ class Square(Rectangle):
         """Method that cretaes a dictionary."""
         SquareDictionary = {
             "id": self.id,
+            "width": self.width,
+            "height": self.height,
             "x": self.x,
-            "size": self.size,
             "y": self.y
         }
         return SquareDictionary
