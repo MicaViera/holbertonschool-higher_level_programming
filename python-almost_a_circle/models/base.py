@@ -23,3 +23,17 @@ class Base:
             return "[]"
         else:
             return json.dumps(list_dictionaries)
+
+    @classmethod
+    def save_to_file(cls, list_objs):
+        """Method that writes json string representation of list_objs."""
+        if list_objs is None:
+            list_objs = []
+
+    @staticmethod
+    def from_json_string(json_string):
+        """Metho  that returns a list of the JSON string representation"""
+        if json_string is None:
+            return []
+        else:
+            return json.loads(json_string)
