@@ -17,7 +17,7 @@ def roman_to_int(roman_string):
     total = 0
     prev_value = 0
     for char in reversed(roman_string):
-        dict_value = roman_dictionary.get(char)
+        dict_value = _dictionary.get(char)
         if dict_value < prev_value:
             total -= dict_value
         else:
