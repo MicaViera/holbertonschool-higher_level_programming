@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-"""Write the first Class Base."""
+"""Write the first Class Base"""
 import json
 
 
