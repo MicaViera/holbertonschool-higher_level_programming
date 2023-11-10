@@ -4,4 +4,4 @@ def multiple_returns(sentence):
     length = len(sentence)
     if sentence == "":
         f_character = None
-    return (length, f_character)
+    return length, f_character
