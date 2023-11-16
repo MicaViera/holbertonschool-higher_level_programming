@@ -36,7 +36,7 @@ class Square:
                 print()
             for element in range(self.__size):
                 print(" " * self.__position[0] + "#" * self.__size)
-    
+
     @property
     def position(self):
         """Method that retrieves position."""
@@ -47,4 +47,3 @@ class Square:
         """Method for the position."""
         if value < 0:
             raise TypeError("position must be a tuple of 2 positive integers")
-
