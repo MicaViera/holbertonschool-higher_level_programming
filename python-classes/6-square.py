@@ -13,6 +13,11 @@ class Square:
     def size(self):
         return self.__size
 
+    @property
+    def position(self):
+        """Method that retrieves position."""
+        return self.__position
+
     @size.setter
     def size(self, size):
         if type(size) is not int:
@@ -20,6 +25,17 @@ class Square:
         if size < 0:
             raise ValueError('size must be >= 0')
         self.__size = size
+
+    @position.setter
+    def position(self, value):
+        """Method for the position."""
+        if not isinstance(value, tuple) or len(value) != 2:
+            raise TypeError("position must be a tuple of 2 positive integers")
+        if not all(isinstance(idx, int) for idx in position):
+            raise TypeError("position must be a tuple of 2 positive integers")
+        if not all(idx >= 0 for idx in position):
+            raise TypeError("position must be a tuple of 2 positive integers")
+        self.__position = value
 
     def area(self):
         """Area of a Square Function."""
@@ -35,19 +51,3 @@ class Square:
             print()
         for element in range(self.__size):
             print(" " * self.__position[0] + "#" * self.__size)
-
-    @property
-    def position(self):
-        """Method that retrieves position."""
-        return self.__position
-
-    @position.setter
-    def position(self, value):
-        """Method for the position."""
-        if not isinstance(value, tuple) or len(value) != 2:
-            raise TypeError("position must be a tuple of 2 positive integers")
-        if not all(isinstance(idx, int) for idx in position):
-            raise TypeError("position must be a tuple of 2 positive integers")
-        if not all(idx >= 0 for idx in position):
-            raise TypeError("position must be a tuple of 2 positive integers")
-        self.__position = value
