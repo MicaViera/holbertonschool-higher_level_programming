@@ -47,3 +47,5 @@ class Square:
         """Method for the position."""
         if value < 0:
             raise TypeError("position must be a tuple of 2 positive integers")
+        if not isinstance(value, tuple):
+            raise TypeError("position must be a tuple of 2 positive integers")
