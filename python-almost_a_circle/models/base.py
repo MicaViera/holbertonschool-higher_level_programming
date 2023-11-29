@@ -1,6 +1,7 @@
 #!/usr/bin/python3
 """Write the first Class Base"""
 import json
+from os.path import exists
 
 
 class Base:
@@ -36,7 +37,7 @@ class Base:
 
     @staticmethod
     def from_json_string(json_string):
-        """Metho  that returns a list of the JSON string representation"""
+        """Method that returns a list of the JSON string representation"""
         if json_string is None:
             return []
         else:
@@ -53,3 +54,15 @@ class Base:
             Square_two = cls(3)
             Square_two.update(**dictionary)
             return Square_two
+
+    @classmethod
+    def load_from_file(cls):
+        """Metod that returns a list of instances."""
+        if not exists(f"{cls.__name__}.json"):
+            return []
+        else:
+            with open(f"{cls.__name__}.json", "r") as file:
+                string = file.read()
+                lists = cls.from_json_string(string)
+                return [cls.create(**instances)
+                        for instances in lists]
