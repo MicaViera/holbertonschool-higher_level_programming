@@ -45,3 +45,11 @@ class Base:
     @classmethod
     def create(cls, **dictionary):
         """Method that returns an instance with attributes."""
+        if cls.__name__ == "Rectangle":
+            Rectangle_two = cls(3, 13)
+            Rectangle_two.update(**dictionary)
+            return Rectangle_two
+        else:
+            Square_two = cls(3)
+            Square_two.update(**dictionary)
+            return Square_two
