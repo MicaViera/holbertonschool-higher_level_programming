@@ -26,8 +26,13 @@ class Base:
     @classmethod
     def save_to_file(cls, list_objs):
         """Method that writes json string representation of list_objs."""
-        if list_objs is None:
-            list_objs = []
+        Lista = []
+        with open(f"{cls.__name__}.json", "w") as file:
+            if list_objs is None:
+                list_objs = []
+            for objs in list_objs:
+                Lista.append(objs.to_dictionary())
+            file.write(cls.to_json_string(Lista))
 
     @staticmethod
     def from_json_string(json_string):
@@ -36,3 +41,7 @@ class Base:
             return []
         else:
             return json.loads(json_string)
+
+    @classmethod
+    def create(cls, **dictionary):
+        """Method that returns an instance with attributes."""
