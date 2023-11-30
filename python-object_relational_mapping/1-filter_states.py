@@ -19,8 +19,8 @@ if __name__ == "__main__":
     database_cursor = database.cursor()
     database_cursor.execute(
         "SELECT * FROM states "
-         "WHERE BINARY name LIKE 'N%' "
-         "ORDER BY states.id ASC"
+        "WHERE BINARY name LIKE 'N%' "
+        "ORDER BY states.id ASC"
     )
 
     for row in database_cursor:
@@ -28,4 +28,3 @@ if __name__ == "__main__":
 
     database_cursor.close()
     database.close()
-
