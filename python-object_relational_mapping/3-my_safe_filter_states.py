@@ -21,7 +21,7 @@ if __name__ == "__main__":
     database_cursor.execute(
         "SELECT * FROM states "
         "WHERE BINARY name LIKE %s "
-        "ORDER BY states.id ASC", 
+        "ORDER BY states.id ASC",
         (argv[4],))
 
     for row in database_cursor.fetchall():
