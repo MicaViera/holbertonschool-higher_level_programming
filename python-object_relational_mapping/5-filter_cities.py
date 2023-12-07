@@ -23,7 +23,7 @@ if __name__ == "__main__":
         "FROM cities "
         "INNER JOIN states ON cities.state_id = states.id "
         "WHERE states.name = %s",
-        (argv[4],))
+        (argv[4], ))
 
     for row in database_cursor.fetchall():
         print(row)
