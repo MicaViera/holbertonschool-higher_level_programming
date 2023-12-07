@@ -21,12 +21,17 @@ if __name__ == "__main__":
     database_cursor.execute(
         "SELECT cities.name "
         "FROM cities "
-        "INNER JOIN states ON cities.state_id = states.id "
+        "LEFT JOIN states ON cities.state_id = states.id "
         "WHERE states.name = %s"
         "ORDER BY cities.id ASC", (argv[4], ))
 
-    for row in database_cursor.fetchall():
-        print(row)
+    lists = database_cursor.fetchall()
+    string = ""
+    for row in lists:
+        if (row != lists[0]):
+            string += ", "
+        string += row[0]
+    print(string)
 
     database_cursor.close()
     database.close()
