@@ -17,7 +17,7 @@ if __name__ == "__main__":
 
     session = Session(db_engine)
 
-    new_name_state = session.query(State).filter_by(id=2)
+    new_name_state = session.query(State).filter_by(id=2).first()
     new_name_state.name = "New Mexico"
     session.commit()
 
