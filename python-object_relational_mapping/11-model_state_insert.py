@@ -1,6 +1,5 @@
 #!/usr/bin/python3
-"""Script that lists all State objects that contain the letter a from
-the database."""
+"""Script that adds the State object “Louisiana” to the database."""
 
 from sys import argv
 from model_state import Base, State
